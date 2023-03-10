@@ -1,0 +1,21 @@
+{
+  "name": "json-2-sheets",
+  "version": "1.0.0",
+  "description": "parses a file in JSON format and sends it to the Google Sheets API",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "author": "iliareshetov",
+  "license": "MIT",
+  "dependencies": {
+    "googleapis": "^112.0.0"
+  },
+  "devDependencies": {
+    "@types/gapi": "^0.0.44",
+    "@types/gapi.auth2": "^0.0.57",
+    "@types/node": "^18.15.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}
