@@ -5,6 +5,7 @@ import {
   Auth, // Namespace for auth related types
   Common, // General types used throughout the library
   sheets_v4,
+  AuthPlus,
 } from "googleapis";
 
 export function processArgs(args: string[]): [string, string] {
@@ -20,14 +21,14 @@ export function processArgs(args: string[]): [string, string] {
 export function readCredentialsFile(
   credentialsFile: string
 ): Auth.CredentialBody {
-  const contents = fs.readFileSync(credentialsFile).toString();
+  const contents: string = fs.readFileSync(credentialsFile).toString();
   return JSON.parse(contents);
 }
 
 export async function createAuth(
   credentials: Auth.CredentialBody
 ): Promise<Auth.GoogleAuth> {
-  const auth = new google.auth.GoogleAuth({
+  const auth: AuthPlus.GoogleAuth = new google.auth.GoogleAuth({
     credentials,
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
